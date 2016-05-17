@@ -2594,7 +2594,7 @@ METHOD(kernel_ipsec_t, query_policy, status_t,
 				case NLMSG_ERROR:
 				{
 					struct nlmsgerr *err = NLMSG_DATA(hdr);
-					DBG1(DBG_KNL, "querying policy failed: %s (%d)",
+					DBG2(DBG_KNL, "querying policy failed: %s (%d)",
 						 strerror(-err->error), -err->error);
 					break;
 				}
