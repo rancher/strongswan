@@ -229,7 +229,9 @@ public class VpnProfileDataSource
 	{
 		long id = profile.getId();
 		ContentValues values = ContentValuesFromVpnProfile(profile);
-		return mDatabase.update(TABLE_VPNPROFILE, values, KEY_ID + " = " + id, null) > 0;
+        	String selection = KEY_ID +" = ?";
+        	String[] selectionArgs = { id +""};
+        	return mDatabase.update(TABLE_VPNPROFILE, values, selection, selectionArgs) > 0;
 	}
 
 	/**
